@@ -1,5 +1,5 @@
 # 💫 About Me:
-I'm a **Game Developer enthusiast** and Informatics Engineering student from Surabaya, Indonesia, with a passion for crafting engaging player experiences. I love deconstructing game mechanics and building fun, interactive worlds from the ground up.
+I'm a **Game & Web Developer enthusiast** and Informatics Engineering student from Surabaya, Indonesia, with a passion for crafting engaging player experiences. I love deconstructing game mechanics and building fun, interactive worlds from the ground up.
 
 My background in programming using **Unity** and **C#** allows me to rapidly prototype ideas and bridge the gap between creative design and technical implementation.
 
