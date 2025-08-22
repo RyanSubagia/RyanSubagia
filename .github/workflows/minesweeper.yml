@@ -1,29 +1,38 @@
-name: Generate Minesweeper
+name: My Custom Minesweeper
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # every day at midnight UTC
   workflow_dispatch:
-
-permissions:
-  contents: write
+    inputs:
+      action:
+        required: true
+      position:
+        required: true
 
 jobs:
-  build:
+  play:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate minesweeper.svg
-        uses: Platane/minesweeper@main
-        with:
-          github_user_name: RyanSubagia
-          outputs: |
-            dist/minesweeper.svg
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Push to output branch
-        uses: crazy-max/ghaction-github-pages@v3
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          target_branch: output
-          build_dir: dist
-          commit_message: "generate minesweeper"
+          python-version: '3.x'
+
+
+      - name: Run my game logic
+        run: python main_runner.py 
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INPUT_ACTION: ${{ github.event.inputs.action }}
+          INPUT_POSITION: ${{ github.event.inputs.position }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          # Add both the game state and the new SVG
+          git add game_state.json minesweeper.svg README.md
+          git diff-index --quiet HEAD || git commit -m "Update minesweeper game"
+          git push
