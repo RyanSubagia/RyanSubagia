@@ -8,6 +8,9 @@ on:
       position:
         required: false
 
+permissions:
+  contents: write
+
 jobs:
   play:
     runs-on: ubuntu-latest
