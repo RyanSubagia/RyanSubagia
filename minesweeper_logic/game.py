@@ -7,8 +7,8 @@ def load_state():
     try:
         with open('game_state.json', 'r') as f:
             content = f.read()
-            if not content:  
-                return None
+                if not content.strip():                
+            return None
             return json.loads(content)
     except FileNotFoundError:
         return None
