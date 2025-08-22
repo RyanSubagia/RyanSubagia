@@ -6,7 +6,7 @@ on:
       action:
         required: true
       position:
-        required: true
+        required: false
 
 jobs:
   play:
@@ -20,9 +20,8 @@ jobs:
         with:
           python-version: '3.x'
 
-
       - name: Run my game logic
-        run: python main_runner.py 
+        run: python minesweeper_logic/main_runner.py
         env:
           INPUT_ACTION: ${{ github.event.inputs.action }}
           INPUT_POSITION: ${{ github.event.inputs.position }}
@@ -32,7 +31,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          # Add both the game state and the new SVG
           git add game_state.json minesweeper.svg README.md
+          # Only commit if there are changes
           git diff-index --quiet HEAD || git commit -m "Update minesweeper game"
           git push
