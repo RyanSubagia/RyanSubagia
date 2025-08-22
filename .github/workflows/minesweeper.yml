@@ -1,1 +1,29 @@
+name: Generate Minesweeper
 
+on:
+  schedule:
+    - cron: '0 0 * * *'  # every day at midnight UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate minesweeper.svg
+        uses: Platane/minesweeper@main
+        with:
+          github_user_name: RyanSubagia
+          outputs: |
+            dist/minesweeper.svg
+
+      - name: Push to output branch
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: output
+          build_dir: dist
+          commit_message: "generate minesweeper"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
