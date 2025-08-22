@@ -53,9 +53,9 @@
 
 ###
 
-<br clear="both">
-
+<p align="center">
   <img src="https://raw.githubusercontent.com/RyanSubagia/RyanSubagia/output/snake.svg" alt="Snake animation" />
+</p>
 
 ###
 <div align="center">
