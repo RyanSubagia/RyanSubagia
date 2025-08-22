@@ -51,7 +51,9 @@
   </a>
 </div>
 
-###
+
+### 💣 Minesweeper
+
 <a href="https://github.com/RyanSubagia/RyanSubagia/actions/workflows/minesweeper.yml">
   <img src="https://raw.githubusercontent.com/RyanSubagia/RyanSubagia/main/minesweeper.svg" alt="Minesweeper Game">
 </a>
