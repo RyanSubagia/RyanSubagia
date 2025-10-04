@@ -16,12 +16,12 @@
 
 ###
 
-<p align="left">
+<!-- <p align="left">
 ✨ Creating bugs since the first for loop I wrote<br>
 📚 I'm currently learning advanced Laravel, and game dev in Unity<br>
 🎯 Goals: Launch my own Steam game and build scalable web/mobile apps<br>
 🎲 Fun fact: I made a 2D medieval turret-defense game and a "Tahu Tek" Diner Dash and hamster ball clone — and I still can't escape Bootstrap modals 
-</p>
+</p> -->
 
 <div align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  />
