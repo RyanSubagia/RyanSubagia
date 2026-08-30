@@ -73,11 +73,11 @@
 
 
 ###
-<div align="center">
+<!-- <div align="center">
   <a href="https://open.spotify.com/user/awp2qltsem6hu6qpumogqkr4n" target="_blank">
     <img src="https://spotify-recently-played-readme.vercel.app/api?user=awp2qltsem6hu6qpumogqkr4n" alt="Spotify Recently Played" />
   </a>
-</div>
+</div> -->
 
 
 ###
